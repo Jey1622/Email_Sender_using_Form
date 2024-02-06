@@ -1,0 +1,162 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  height: auto;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0px 30px 60px rgba(0,0,0);
+}
+.form h1{
+  text-align: center;
+  padding: 0 0 20px 0;
+  color: white;
+
+}
+.form form{
+  padding:0 40px;
+}
+
+form .text_field{
+  position: relative;
+  border-bottom: 2px solid lightgray;
+  margin: 30px 0px;
+}
+.text_field input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background: none;
+  color: #ffffff;
+}
+.text_field textarea{
+  width: 100%;
+  padding: 0 5px;
+  height: 100px;
+  font-size: 18px;
+  border: none;
+  background: none;
+  outline: none;
+  color: #ffffff;
+  resize: none;
+}
+
+.text_field label{
+  position: absolute;
+  top:50%;
+  left: 5px;
+  color: darkslateblue;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+  transition: all .5s;
+}
+
+.text_field span::before{
+content: '';
+position: absolute;
+width: 0%;
+top: 40px;
+left: 0;
+height: 2px;
+background-color: darkblue;
+transition: all .5s;
+}
+.text_field .textarea_span::before{
+  top: 104px;
+}
+.text_field input:focus ~ label,.text_field input:valid ~ label{
+  top:-5px;
+
+}
+.text_field input:focus ~ span::before,.text_field input:valid ~ span::before{
+ width: 100%;
+}
+
+.text_field textarea:focus ~ .textarea_label,.text_field textarea:valid ~ .textarea_label{
+  top: -16px;
+}
+
+.text_field textarea:focus ~ .textarea_span::before,.text_field textarea:valid ~ .textarea_span::before{
+  width: 100%;
+}
+
+.button{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.button button[type=submit]{
+  padding: 8px;
+  width: 80px;
+  color: #ffffff;
+  background-color: rgb(40,27,223);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  transition: all .5s ;
+  font-weight: bolder;
+}
+
+.button button[type=submit]:hover{
+  background-color: rgba(40, 27, 223, 0.5);
+  cursor: pointer;
+}
+
+.popup{
+  background-color: rgba(0,0 ,0 ,0.8 );
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup-content{
+  height: auto;
+  width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 0 15px 4px rgba(0,0 ,0 ,0.6 );
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  animation: fade;
+  animation-duration: 1s;
+}
+@keyframes fade{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+.close{
+  color: red;
+  cursor: pointer;
+  font-size: 25px;
+  transition: all .5s ;
+}
+.close:hover{
+  color: darkred;
+}
+.popup-msg{
+  color: firebrick;
+  font-size: 20px;
+}
